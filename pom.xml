@@ -7,6 +7,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>CloudNativeLab</name>
     <description>云原生实践实验</description>
+
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,10 +16,13 @@
         <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version>
         <spring-cloud.version>2021.0.5</spring-cloud.version>
     </properties>
+
+    <modules>
+        <module>nacos-service</module>
+        <module>product-service</module>
+    </modules>
+
     <dependencies>
-
-
-
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
@@ -119,6 +123,8 @@
             </plugin>
         </plugins>
     </build>
+
+    <packaging>pom</packaging>
 
     <repositories>
         <!--阿里云主仓库，代理了 maven central 和 jcenter 仓库 -->
