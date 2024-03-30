@@ -24,6 +24,18 @@
     </modules>
 
     <dependencies>
+
+        <!--Sentinel-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+        <!--与Sentinel 控制台通信-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-transport-simple-http</artifactId>
+        </dependency>
+
         <!--Nacos服务注册中心-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

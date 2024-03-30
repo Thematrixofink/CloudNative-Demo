@@ -41,6 +41,11 @@ public class ProductController {
      */
     @GetMapping("/queryAllProduct")
     public List<Product> findByProductId() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         List<Product> productList = productService.list();
         log.info("-------------OK queryAllProduct--------------------");
         return productList;

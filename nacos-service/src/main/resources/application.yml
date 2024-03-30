@@ -4,8 +4,6 @@ server:
 spring:
   application:
     name: nacos-service
-  main:
-    web-application-type: reactive
   cloud:
     nacos:
       discovery:

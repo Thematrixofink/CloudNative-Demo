@@ -2,6 +2,8 @@ package com.cloudnative.productclient.client;
 
 
 import com.cloudnative.productclient.model.Product;
+import com.cloudnative.productclient.sentinel.FeignConfiguration;
+import com.cloudnative.productclient.sentinel.ProductServiceFallback;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,7 +13,9 @@ import java.util.List;
 /**
  商品服务远程调用客户端
  */
-@FeignClient(name="product-service",path = "/product")
+@FeignClient(name="product-service",path = "/product",
+        fallback = ProductServiceFallback.class,
+        configuration = FeignConfiguration.class)
 public interface ProductServiceClient {
 
     /**
