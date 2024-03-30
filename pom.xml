@@ -7,6 +7,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>CloudNativeLab</name>
     <description>云原生实践实验</description>
+
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,19 +16,32 @@
         <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version>
         <spring-cloud.version>2021.0.5</spring-cloud.version>
     </properties>
+
+    <modules>
+        <module>nacos-service</module>
+        <module>product-service</module>
+        <module>product-client</module>
+    </modules>
+
     <dependencies>
 
-
-
+        <!--Sentinel-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
-<!--        GateWay网关-->
+        <!--与Sentinel 控制台通信-->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-gateway</artifactId>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-transport-simple-http</artifactId>
         </dependency>
+
+        <!--Nacos服务注册中心-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
 <!--        Open Feign远程调用-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -38,12 +52,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
-        </dependency>
-<!--        测试依赖-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 <!--    管理依赖，只是声明依赖的版本，并不会引入-->
@@ -119,6 +127,8 @@
             </plugin>
         </plugins>
     </build>
+
+    <packaging>pom</packaging>
 
     <repositories>
         <!--阿里云主仓库，代理了 maven central 和 jcenter 仓库 -->
