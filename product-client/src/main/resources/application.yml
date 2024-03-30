@@ -1,15 +1,11 @@
 server:
-  port: 8090
+  port: 8092
 
 spring:
   application:
-    name: nacos-service
-  main:
-    web-application-type: reactive
+    name: product-client
   cloud:
     nacos:
       discovery:
         server-addr: localhost:8848
-
-
 
