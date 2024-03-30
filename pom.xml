@@ -24,11 +24,12 @@
     </modules>
 
     <dependencies>
-        <!--Nacos发现中心-->
+        <!--Nacos服务注册中心-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
+
 <!--        Open Feign远程调用-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -40,7 +41,6 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-
     </dependencies>
 <!--    管理依赖，只是声明依赖的版本，并不会引入-->
 <!--    当子Pom文件引入包含在管理依赖以内的依赖时，无需输入版本号-->
